@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KORA Beauty — The Art of a Fresh Start | AI Ecommerce Creative Design Case Study</title>
+    <meta name="description" content="An independent AI-assisted skincare campaign concept exploring botanical creative design, tactile material worlds, and cohesive ecommerce visual systems by Satyam Manik.">
+
+    <!-- Luxury Editorial Typography: Playfair Display (Headings), Plus Jakarta Sans (UI & Body), Cormorant Garamond (Italic accents) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        display: ['Cormorant Garamond', 'Georgia', 'serif'],
+                        sans: ['Plus Jakarta Sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        botanical: {
+                            50: '#F4F7F4',
+                            100: '#E5ECE5',
+                            200: '#CBDBCB',
+                            300: '#A6C1A7',
+                            400: '#7E9F80',
+                            500: '#5F8562',
+                            600: '#466C49',
+                            700: '#345237',
+                            800: '#233E26',
+                            900: '#152B18',
+                            950: '#0C1C0F',
+                        },
+                        sage: {
+                            50: '#F7F8F6',
+                            100: '#ECEEE9',
+                            200: '#DCE1D7',
+                            300: '#C2CBB9',
+                            400: '#A4B199',
+                            500: '#86967A',
+                        },
+                        stone: {
+                            50: '#FAF8F5',
+                            100: '#F3EFEA',
+                            200: '#E6DFD5',
+                            300: '#D5CBBF',
+                            800: '#2E2A25',
+                            900: '#1C1916',
+                            950: '#121513',
+                        },
+                        gold: {
+                            300: '#F0D494',
+                            400: '#DFBE76',
+                            500: '#C5A059',
+                            600: '#AA8542',
+                        }
+                    },
+                    boxShadow: {
+                        'luxe': '0 10px 30px -5px rgba(21, 43, 24, 0.06), 0 0 0 1px rgba(220, 225, 215, 0.7)',
+                        'luxe-hover': '0 25px 50px -12px rgba(21, 43, 24, 0.16), 0 0 0 1px rgba(95, 133, 98, 0.5)',
+                        'gold-glow': '0 0 25px rgba(223, 190, 118, 0.35)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FAF8F5;
+            color: #1C1916;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .dark body, html.dark body {
+            background-color: #121513 !important;
+            color: #EDE8E1 !important;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        .font-display {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+        }
+
+        /* Ambient subtle grain overlay */
+        .texture-canvas {
+            background-image: radial-gradient(rgba(35, 62, 38, 0.035) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+
+        .dark .texture-canvas {
+            background-image: radial-gradient(rgba(203, 219, 203, 0.045) 1px, transparent 0);
+        }
+
+        /* Glass panel accents */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(220, 225, 215, 0.8);
+        }
+
+        .dark .glass-panel {
+            background: rgba(24, 28, 25, 0.90);
+            backdrop-filter: blur(16px);
+            border-color: rgba(60, 72, 63, 0.6);
+        }
+
+        /* Interactive Filter Tab Active State */
+        .filter-tab.active {
+            background-color: #152B18 !important;
+            color: #FAF8F5 !important;
+            border-color: #152B18 !important;
+            box-shadow: 0 4px 12px rgba(21, 43, 24, 0.2);
+        }
+        .dark .filter-tab.active {
+            background-color: #CBDBCB !important;
+            color: #121513 !important;
+            border-color: #CBDBCB !important;
+            box-shadow: 0 4px 12px rgba(203, 219, 203, 0.2);
+        }
+
+        /* Interactive Anatomy Hotspot Pin Animation */
+        @keyframes pulse-ring {
+            0% { transform: scale(0.9); opacity: 0.9; }
+            50% { transform: scale(1.4); opacity: 0.2; }
+            100% { transform: scale(0.9); opacity: 0.9; }
+        }
+        .pulse-pin::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 9999px;
+            background-color: currentColor;
+            opacity: 0.4;
+            animation: pulse-ring 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF8F5;
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #121513;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBDBCB;
+            border-radius: 4px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #345237;
+        }
+
+        /* Code syntax highlight */
+        .code-pill {
+            font-family: 'JetBrains Mono', monospace;
+            background: rgba(21, 43, 24, 0.06);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+        .dark .code-pill {
+            background: rgba(203, 219, 203, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen text-stone-900 dark:text-[#EDE8E1] transition-colors duration-300 texture-canvas">
+
+    <!-- Top Floating Global Header -->
+    <header class="sticky top-0 z-40 w-full border-b border-stone-200/80 dark:border-stone-800/80 bg-[#FAF8F5]/90 dark:bg-[#121513]/90 backdrop-blur-md px-5 sm:px-8 py-3.5 flex items-center justify-between transition-colors">
+        <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-botanical-800 text-stone-100 flex items-center justify-center font-serif text-sm font-semibold tracking-wider shadow-sm">
+                KB
+            </div>
+            <div>
+                <a href="#hero" class="font-serif font-bold text-base sm:text-lg tracking-wide hover:text-botanical-700 dark:hover:text-botanical-300 transition-colors">
+                    KORA Beauty
+                </a>
+                <span class="hidden sm:inline-block text-[11px] font-medium uppercase tracking-wider text-botanical-700 dark:text-botanical-300 ml-2 px-2.5 py-0.5 rounded-full bg-botanical-100/70 dark:bg-botanical-900/60 border border-botanical-200 dark:border-botanical-700/60">
+                    AI Ecommerce Creative Design
+                </span>
+            </div>
+        </div>
+
+        <!-- Quick Nav & Actions -->
+        <div class="flex items-center gap-2 sm:gap-4">
+            <nav class="hidden lg:flex items-center gap-6 text-xs font-semibold uppercase tracking-wider text-stone-700 dark:text-stone-300">
+                <a href="#strategy" class="hover:text-botanical-700 dark:hover:text-botanical-300 transition-colors">Strategy</a>
+                <a href="#breakdown" class="hover:text-botanical-700 dark:hover:text-botanical-300 transition-colors">Pack Truth</a>
+                <a href="#simulator" class="hover:text-botanical-700 dark:hover:text-botanical-300 transition-colors">Live Simulator</a>
+                <a href="#gallery" class="hover:text-botanical-700 dark:hover:text-botanical-300 transition-colors">Campaign Assets</a>
+                <a href="#prompts" class="hover:text-botanical-700 dark:hover:text-botanical-300 transition-colors">Prompt Blueprint</a>
+                <a href="#creator" class="hover:text-botanical-700 dark:hover:text-botanical-300 transition-colors">Creator</a>
+            </nav>
+
+            <a href="https://korabeauty.in/products/purifying-gel-cleanser" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-stone-100 dark:bg-[#1C201D] text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-800 hover:border-botanical-500 hover:text-botanical-800 dark:hover:text-botanical-200 transition-all">
+                <span>Official Brand Pack</span>
+                <svg class="w-3.5 h-3.5 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+
+            <a href="https://wa.me/919343961879" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-[#25D366]/15 hover:bg-[#25D366] text-[#128C7E] hover:text-white dark:text-[#25D366] dark:hover:text-white border border-[#25D366]/40 transition-all shadow-sm" aria-label="WhatsApp">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 20.16C10.57 20.16 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.16 12.05 20.16ZM16.57 14.33C16.32 14.21 15.1 13.61 14.88 13.53C14.65 13.45 14.48 13.41 14.32 13.65C14.15 13.9 13.68 14.45 13.53 14.62C13.39 14.78 13.24 14.8 12.99 14.68C12.74 14.55 11.94 14.29 10.99 13.44C10.25 12.78 9.75 11.97 9.61 11.72C9.46 11.47 9.59 11.34 9.72 11.21C9.83 11.1 9.97 10.92 10.09 10.78C10.21 10.64 10.26 10.53 10.34 10.37C10.42 10.2 10.38 10.06 10.32 9.94C10.26 9.81 9.77 8.61 9.56 8.12C9.37 7.64 9.17 7.7 9.02 7.69C8.88 7.69 8.71 7.68 8.55 7.68C8.38 7.68 8.11 7.74 7.89 7.99C7.66 8.24 7.02 8.84 7.02 10.06C7.02 11.28 7.91 12.46 8.03 12.62C8.15 12.79 9.77 15.28 12.26 16.35C12.85 16.61 13.31 16.76 13.67 16.87C14.26 17.06 14.8 17.03 15.23 16.97C15.71 16.9 16.71 16.37 16.92 15.79C17.13 15.21 17.13 14.72 17.07 14.62C17.01 14.51 16.82 14.45 16.57 14.33Z"/></svg>
+                <span>WhatsApp</span>
+            </a>
+
+            <!-- Dark / Light Theme Toggle -->
+            <button id="themeToggleBtn" onclick="toggleTheme()" class="p-2 rounded-full bg-stone-100 dark:bg-[#1C201D] border border-stone-200 dark:border-stone-800 hover:bg-stone-200 dark:hover:bg-[#252B26] transition-all" aria-label="Toggle Theme">
+                <svg id="themeSunIcon" class="w-4 h-4 text-gold-500 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                <svg id="themeMoonIcon" class="w-4 h-4 text-stone-700 dark:text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Independent Disclosure Pill Banner -->
+    <div class="bg-botanical-100/70 dark:bg-botanical-950/50 border-b border-botanical-200/70 dark:border-botanical-900/60 px-4 py-2 text-center text-xs text-botanical-800 dark:text-botanical-200 font-medium flex items-center justify-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-botanical-600 animate-ping"></span>
+        <span>Speculative Creative Concept & AI Commerce Case Study — Unsolicited independent concept created for creative & portfolio exploration.</span>
+    </div>
+
+    <!-- MAIN EDITORIAL CONTENT -->
+    <main class="max-w-6xl mx-auto px-5 sm:px-8 py-10 md:py-16 space-y-20 md:space-y-32">
+
+        <!-- 1. HERO SECTION -->
+        <section id="hero" class="space-y-10">
+            <div class="max-w-3xl space-y-5">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sage-100 dark:bg-botanical-900/50 border border-sage-200 dark:border-botanical-700/60 text-xs font-semibold uppercase tracking-wider text-botanical-800 dark:text-botanical-300">
+                    <span class="w-2 h-2 rounded-full bg-botanical-500 animate-pulse"></span>
+                    <span>AI Ecommerce Creative Design & Visual System</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-stone-900 dark:text-stone-100 leading-[1.1] tracking-tight">
+                    The Art of a <span class="italic font-display font-normal text-botanical-700 dark:text-botanical-300">Fresh Start</span>
+                </h1>
+
+                <p class="text-base sm:text-lg md:text-xl text-stone-700 dark:text-stone-300 leading-relaxed font-light">
+                    An independent AI-assisted skincare campaign concept for <strong>KORA Beauty’s Purifying Gel Cleanser</strong> with Neem & Green Tea. Exploring how botanical restraint, sunlit travertine stone, tactile water reflections, and rigorous product truth create a unified ecommerce visual ecosystem.
+                </p>
+
+                <!-- Project Metadata Pill Group -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-stone-200 dark:border-stone-800 text-xs">
+                    <div>
+                        <span class="text-stone-500 dark:text-stone-400 uppercase tracking-wider font-semibold block text-[10px]">Client / Brand</span>
+                        <span class="font-semibold text-stone-900 dark:text-stone-100">KORA Beauty (Concept)</span>
+                    </div>
+                    <div>
+                        <span class="text-stone-500 dark:text-stone-400 uppercase tracking-wider font-semibold block text-[10px]">Creative Scope</span>
+                        <span class="font-semibold text-stone-900 dark:text-stone-100">AI Ecommerce Creative Design</span>
+                    </div>
+                    <div>
+                        <span class="text-stone-500 dark:text-stone-400 uppercase tracking-wider font-semibold block text-[10px]">Deliverables</span>
+                        <span class="font-semibold text-stone-900 dark:text-stone-100">7 Multi-Format Visuals</span>
+                    </div>
+                    <div>
+                        <span class="text-stone-500 dark:text-stone-400 uppercase tracking-wider font-semibold block text-[10px]">Quality Standard</span>
+                        <span class="font-semibold text-stone-900 dark:text-stone-100">Human Claim Verification</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Cinematic Asset Showcase -->
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-stone-200 dark:border-stone-800 bg-stone-100 dark:bg-stone-900 group">
+                <img src="assets/Purifying Gel Cleanser Beauty Advertisement.png" alt="KORA Beauty Purifying Gel Cleanser Campaign Visual" class="w-full h-auto max-h-[720px] object-cover object-center transform group-hover:scale-[1.01] transition-transform duration-700">
+                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-stone-950/90 via-stone-950/40 to-transparent p-6 sm:p-10 text-white flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
+                    <div class="space-y-1.5 max-w-xl">
+                        <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold flex items-center gap-2">
+                            <span>Hero Visual Asset 01</span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-gold-400"></span>
+                            <span>PDP / Social Header</span>
+                        </span>
+                        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white">Botanical Precision & Stated Benefits</h2>
+                        <p class="text-xs sm:text-sm text-stone-200 font-light leading-relaxed">
+                            Positioning the cleanser at the apex of warm morning light, travertine stone, and botanical ingredients, pairing image clarity with structured benefit communication.
+                        </p>
+                    </div>
+                    <button onclick="openModal('assets/Purifying Gel Cleanser Beauty Advertisement.png', 'Hero Visual Asset 01', 'Botanical Precision & Stated Benefits', 'Positioning the cleanser at the apex of warm morning light, travertine stone, and botanical ingredients.')" class="px-5 py-2.5 rounded-full bg-white/20 hover:bg-white text-white hover:text-stone-900 backdrop-blur-md text-xs font-semibold tracking-wide transition-all border border-white/30 flex items-center gap-2 shadow-lg">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                        <span>Inspect High-Res</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. CREATIVE STRATEGY & THE PROBLEM -->
+        <section id="strategy" class="space-y-12">
+            <div class="flex items-center gap-3">
+                <span class="w-7 h-[1px] bg-botanical-500"></span>
+                <span class="text-xs font-bold uppercase tracking-widest text-botanical-700 dark:text-botanical-300">01. Strategy & Problem Space</span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                <div class="lg:col-span-5 space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-stone-900 dark:text-stone-100 leading-tight">
+                        Moving Beyond Unanchored "AI Aesthetics"
+                    </h2>
+                    <p class="text-sm sm:text-base text-stone-700 dark:text-stone-300 leading-relaxed font-light">
+                        Most AI-generated e-commerce imagery fails because it treats products as decorative props: hallucinating nonexistent packaging labels, over-decorating scenes with messy leaves, or inventing unsupported clinical claims.
+                    </p>
+                    <p class="text-sm sm:text-base text-stone-700 dark:text-stone-300 leading-relaxed font-light">
+                        <strong>The Strategy:</strong> Take the physical truth of KORA's pale sage-green tube, its gold botanical crest, and its stated neem and green tea formulation, and build a modular campaign world around restraint, clarity, and genuine commercial utility.
+                    </p>
+
+                    <!-- Strategic Palette Swatches -->
+                    <div class="p-5 rounded-2xl bg-stone-100 dark:bg-[#181C19] border border-stone-200 dark:border-stone-800 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold uppercase tracking-wider text-stone-700 dark:text-stone-300 block">Campaign Color & Material System</span>
+                            <span class="text-[10px] text-stone-500">Curated Palette</span>
+                        </div>
+                        <div class="grid grid-cols-4 gap-2 text-center text-[10px] font-medium">
+                            <div class="space-y-1">
+                                <div class="h-10 rounded-lg bg-[#C2CBB9] border border-black/10 shadow-inner"></div>
+                                <span class="font-mono text-[9px] text-stone-500 block">#C2CBB9</span>
+                                <span>Sage Green</span>
+                            </div>
+                            <div class="space-y-1">
+                                <div class="h-10 rounded-lg bg-[#152B18] border border-black/10 shadow-inner"></div>
+                                <span class="font-mono text-[9px] text-stone-500 block">#152B18</span>
+                                <span class="text-stone-700 dark:text-stone-300">Botanical Forest</span>
+                            </div>
+                            <div class="space-y-1">
+                                <div class="h-10 rounded-lg bg-[#E6DFD5] border border-black/10 shadow-inner"></div>
+                                <span class="font-mono text-[9px] text-stone-500 block">#E6DFD5</span>
+                                <span>Travertine</span>
+                            </div>
+                            <div class="space-y-1">
+                                <div class="h-10 rounded-lg bg-[#DFBE76] border border-black/10 shadow-inner"></div>
+                                <span class="font-mono text-[9px] text-stone-500 block">#DFBE76</span>
+                                <span>Warm Gold</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4 Pillars Grid -->
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div class="p-6 rounded-2xl glass-panel shadow-sm space-y-3 border border-stone-200 dark:border-stone-800 hover:border-botanical-500/50 transition-colors">
+                        <div class="w-8 h-8 rounded-full bg-botanical-100 dark:bg-botanical-900/60 text-botanical-800 dark:text-botanical-200 flex items-center justify-center font-bold text-xs">
+                            01
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100">Product Truth First</h3>
+                        <p class="text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed font-light">
+                            Packaging geometry, cap hue, typography, and volume statements (100ml / 3.38 fl. oz.) are locked to real pack references—never hallucinated by generative models.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl glass-panel shadow-sm space-y-3 border border-stone-200 dark:border-stone-800 hover:border-botanical-500/50 transition-colors">
+                        <div class="w-8 h-8 rounded-full bg-botanical-100 dark:bg-botanical-900/60 text-botanical-800 dark:text-botanical-200 flex items-center justify-center font-bold text-xs">
+                            02
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100">Tactile Sensory World</h3>
+                        <p class="text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed font-light">
+                            Travertine stone adds geological calm; micro water droplets and reflections communicate morning freshness without artificial plastic glare.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl glass-panel shadow-sm space-y-3 border border-stone-200 dark:border-stone-800 hover:border-botanical-500/50 transition-colors">
+                        <div class="w-8 h-8 rounded-full bg-botanical-100 dark:bg-botanical-900/60 text-botanical-800 dark:text-botanical-200 flex items-center justify-center font-bold text-xs">
+                            03
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100">Funnel-Specific Jobs</h3>
+                        <p class="text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed font-light">
+                            Every asset fulfills a specific funnel job: Hero introduction, ingredient authority, macro sensory texture, routine lifestyle, and 3-step usage guides.
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl glass-panel shadow-sm space-y-3 border border-stone-200 dark:border-stone-800 hover:border-botanical-500/50 transition-colors">
+                        <div class="w-8 h-8 rounded-full bg-botanical-100 dark:bg-botanical-900/60 text-botanical-800 dark:text-botanical-200 flex items-center justify-center font-bold text-xs">
+                            04
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100">Human Quality Assurance</h3>
+                        <p class="text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed font-light">
+                            Claims like "Dermatologically Tested", "Sulphate Free", and "Paraben Free" are substantiated against pack copy without adding fake medical certifications.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. INTERACTIVE PACKAGING ANATOMY BREAKDOWN WITH INTERACTIVE HOTSPOTS -->
+        <section id="breakdown" class="space-y-12">
+            <div class="flex items-center gap-3">
+                <span class="w-7 h-[1px] bg-botanical-500"></span>
+                <span class="text-xs font-bold uppercase tracking-widest text-botanical-700 dark:text-botanical-300">02. Packaging Anatomy & Claim Substantiation</span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center glass-panel p-6 sm:p-10 rounded-3xl">
+                <!-- Visual Pack View with Clickable Hotspots -->
+                <div class="lg:col-span-5 relative flex flex-col items-center justify-center bg-stone-100 dark:bg-stone-950 rounded-2xl p-6 overflow-hidden select-none">
+                    <img src="assets/Neem & Green Tea Purifying Cleanser.png" alt="Packaging Breakdown Anatomy" class="max-h-[460px] object-contain rounded-xl shadow-lg transition-transform duration-300">
+                    
+                    <!-- Interactive Hotspot 1: Brand & Foil Crest -->
+                    <button onclick="selectHotspot(1)" id="pin1" class="absolute top-[22%] right-[14%] bg-gold-500 text-stone-950 font-bold w-7 h-7 rounded-full shadow-lg flex items-center justify-center text-xs pulse-pin hover:scale-110 transition-all border-2 border-white ring-2 ring-gold-400" aria-label="Inspect Crest Hotspot">
+                        1
+                    </button>
+                    <!-- Interactive Hotspot 2: Formulation & Ingredients -->
+                    <button onclick="selectHotspot(2)" id="pin2" class="absolute top-[48%] left-[12%] bg-botanical-700 text-white font-bold w-7 h-7 rounded-full shadow-lg flex items-center justify-center text-xs pulse-pin hover:scale-110 transition-all border-2 border-white ring-2 ring-botanical-500" aria-label="Inspect Active Formulation Hotspot">
+                        2
+                    </button>
+                    <!-- Interactive Hotspot 3: Claims & Benefit Copy -->
+                    <button onclick="selectHotspot(3)" id="pin3" class="absolute top-[65%] right-[12%] bg-botanical-700 text-white font-bold w-7 h-7 rounded-full shadow-lg flex items-center justify-center text-xs pulse-pin hover:scale-110 transition-all border-2 border-white ring-2 ring-botanical-500" aria-label="Inspect Claims Hotspot">
+                        3
+                    </button>
+                    <!-- Interactive Hotspot 4: Regulatory Fill Volume & Cap -->
+                    <button onclick="selectHotspot(4)" id="pin4" class="absolute bottom-[10%] left-[20%] bg-stone-800 text-white font-bold w-7 h-7 rounded-full shadow-lg flex items-center justify-center text-xs pulse-pin hover:scale-110 transition-all border-2 border-white ring-2 ring-stone-600" aria-label="Inspect Fill & Cap Hotspot">
+                        4
+                    </button>
+
+                    <div class="mt-4 text-[11px] text-stone-500 dark:text-stone-400 flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-gold-500 animate-ping"></span>
+                        <span>Click pins 1–4 to inspect physical pack verification details</span>
+                    </div>
+                </div>
+
+                <!-- Verified Claims Matrix & Dynamic Hotspot Card -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div>
+                        <span class="text-xs uppercase font-bold tracking-wider text-botanical-700 dark:text-botanical-300">Pack Inspection Log</span>
+                        <h3 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 dark:text-stone-100 mt-1">
+                            Physical Pack Truth vs. Generative Output
+                        </h3>
+                    </div>
+
+                    <!-- Dynamic Callout Card -->
+                    <div id="hotspotDisplayCard" class="p-5 rounded-2xl bg-botanical-50/70 dark:bg-botanical-950/60 border border-botanical-200 dark:border-botanical-800 space-y-2 transition-all">
+                        <div class="flex items-center justify-between">
+                            <span id="hotspotBadge" class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-gold-400/20 text-gold-600 dark:text-gold-400 border border-gold-400/40">Pin 1 Selected</span>
+                            <span class="text-[10px] text-stone-500">Verified in Production</span>
+                        </div>
+                        <h4 id="hotspotTitle" class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100">Gold Botanical Crest & Brand Typemark</h4>
+                        <p id="hotspotBody" class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 leading-relaxed font-light">
+                            Official KORA wordmark and stylized botanical leaf emblem rendered with subtle gold foil specular response. Negative prompts prevent AI from warping the letterforms into pseudo-letter glyphs.
+                        </p>
+                    </div>
+
+                    <!-- Verified Checklist Items -->
+                    <div class="space-y-3 text-xs sm:text-sm">
+                        <div class="p-3.5 rounded-xl bg-stone-100 dark:bg-[#181C19] border border-stone-200 dark:border-stone-800 flex items-start gap-3">
+                            <span class="text-emerald-600 font-bold mt-0.5 text-base">✓</span>
+                            <div>
+                                <span class="font-bold text-stone-900 dark:text-stone-100">Tube Hue & Materiality (#C2CBB9):</span>
+                                <p class="text-stone-600 dark:text-stone-300 font-light mt-0.5">Subtle matte pale sage-green with off-white flip-cap accurately reproduced across all 7 assets.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl bg-stone-100 dark:bg-[#181C19] border border-stone-200 dark:border-stone-800 flex items-start gap-3">
+                            <span class="text-emerald-600 font-bold mt-0.5 text-base">✓</span>
+                            <div>
+                                <span class="font-bold text-stone-900 dark:text-stone-100">Stated Packaging Benefits:</span>
+                                <p class="text-stone-600 dark:text-stone-300 font-light mt-0.5">Strictly adheres to stated benefits: "Deep Cleanses, Controls Oil, Soothes Skin" and skin type: "For Oily & Combination Skin".</p>
+                            </div>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl bg-stone-100 dark:bg-[#181C19] border border-stone-200 dark:border-stone-800 flex items-start gap-3">
+                            <span class="text-emerald-600 font-bold mt-0.5 text-base">✓</span>
+                            <div>
+                                <span class="font-bold text-stone-900 dark:text-stone-100">Clean Regulatory Claims:</span>
+                                <p class="text-stone-600 dark:text-stone-300 font-light mt-0.5">"Dermatologically Tested", "Sulphate Free | Paraben Free". No fabricated certifications, fake dermatological awards, or unapproved medical cure claims.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. LIVE CHANNEL PLACEMENT SIMULATOR (NEW FEATURE) -->
+        <section id="simulator" class="space-y-10">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-3">
+                        <span class="w-7 h-[1px] bg-botanical-500"></span>
+                        <span class="text-xs font-bold uppercase tracking-widest text-botanical-700 dark:text-botanical-300">03. Real-World Application</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-stone-900 dark:text-stone-100">
+                        Live E-Commerce Channel Simulator
+                    </h2>
+                    <p class="text-sm text-stone-600 dark:text-stone-300 font-light max-w-xl">
+                        Preview how the art-directed assets adapt into production environments: Shopify PDP listing, Instagram Story Ad (9:16), and Editorial Campaign Banner.
+                    </p>
+                </div>
+
+                <!-- Simulator View Toggle Tabs -->
+                <div class="flex items-center p-1 bg-stone-200 dark:bg-stone-800/80 rounded-full text-xs font-semibold">
+                    <button onclick="switchSimulator('pdp', this)" class="sim-tab px-4 py-2 rounded-full bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-100 shadow-sm transition-all">Shopify PDP</button>
+                    <button onclick="switchSimulator('story', this)" class="sim-tab px-4 py-2 rounded-full text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition-all">Instagram Story</button>
+                    <button onclick="switchSimulator('banner', this)" class="sim-tab px-4 py-2 rounded-full text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition-all">Brand Banner</button>
+                </div>
+            </div>
+
+            <!-- Simulator Container -->
+            <div class="glass-panel rounded-3xl p-6 sm:p-10 border border-stone-200 dark:border-stone-800 shadow-xl min-h-[500px] flex items-center justify-center">
+
+                <!-- 1. PDP View -->
+                <div id="sim-pdp" class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-6 rounded-2xl overflow-hidden bg-stone-100 dark:bg-stone-950 border border-stone-200 dark:border-stone-800 shadow-md">
+                        <img id="simPdpImg" src="assets/Purifying Gel Cleanser Beauty Advertisement.png" alt="PDP Product Mockup" class="w-full aspect-[4/5] object-cover">
+                        <div class="p-3 bg-stone-50 dark:bg-stone-900 flex items-center justify-between text-[11px] text-stone-500 border-t border-stone-200 dark:border-stone-800">
+                            <span>Image 1 of 5 • PDP Hero</span>
+                            <span class="text-botanical-700 dark:text-botanical-300 font-semibold cursor-pointer" onclick="cycleSimPdp()">Next Angle →</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-6 space-y-4">
+                        <div class="space-y-1">
+                            <span class="text-[11px] uppercase tracking-wider font-bold text-botanical-700 dark:text-botanical-300">KORA BEAUTY</span>
+                            <h3 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 dark:text-stone-100">Purifying Gel Cleanser</h3>
+                            <p class="text-xs text-stone-500 dark:text-stone-400">With Neem & Green Tea • 100 ml / 3.38 fl. oz.</p>
+                        </div>
+
+                        <div class="flex items-center gap-2 text-xs">
+                            <div class="flex text-gold-500">★★★★★</div>
+                            <span class="font-bold text-stone-900 dark:text-stone-100">4.9</span>
+                            <span class="text-stone-500">(128 customer reviews)</span>
+                        </div>
+
+                        <div class="text-2xl font-serif font-bold text-stone-900 dark:text-stone-100">
+                            ₹695 <span class="text-xs font-sans font-normal text-stone-500 ml-1">Taxes included</span>
+                        </div>
+
+                        <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed font-light">
+                            A gentle, non-stripping daily cleanser designed for oily & combination skin. Deeply cleanses pore impurities while soothing botanical actives preserve skin moisture barrier.
+                        </p>
+
+                        <div class="space-y-2 pt-2">
+                            <button class="w-full py-3 rounded-full bg-botanical-800 hover:bg-botanical-900 text-white font-semibold text-xs tracking-wider uppercase transition-all shadow-md">
+                                Add to Cart — Instant Checkout
+                            </button>
+                            <div class="grid grid-cols-3 gap-2 text-center text-[10px] text-stone-600 dark:text-stone-400 pt-2">
+                                <div class="p-2 rounded-lg bg-stone-100 dark:bg-stone-800/60">Dermatologically Tested</div>
+                                <div class="p-2 rounded-lg bg-stone-100 dark:bg-stone-800/60">Sulphate & Paraben Free</div>
+                                <div class="p-2 rounded-lg bg-stone-100 dark:bg-stone-800/60">Vegan & Cruelty Free</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Instagram Story Mockup (Hidden by default) -->
+                <div id="sim-story" class="hidden w-full max-w-sm flex-col items-center">
+                    <div class="w-[310px] sm:w-[340px] rounded-[36px] p-3 bg-stone-900 shadow-2xl border-4 border-stone-800 relative">
+                        <!-- Dynamic Story Header -->
+                        <div class="relative rounded-[28px] overflow-hidden aspect-[9/16] bg-stone-950 flex flex-col justify-between p-4">
+                            <img src="assets/Refreshing Neem & Green Tea Skincare Moment.png" alt="Instagram Story Ad" class="absolute inset-0 w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-b from-stone-950/60 via-transparent to-stone-950/80"></div>
+
+                            <!-- Story Bar & Profile -->
+                            <div class="relative z-10 space-y-3">
+                                <div class="w-full h-1 bg-white/40 rounded-full overflow-hidden">
+                                    <div class="w-2/3 h-full bg-white rounded-full"></div>
+                                </div>
+                                <div class="flex items-center justify-between text-white text-xs">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-7 h-7 rounded-full bg-botanical-800 text-gold-400 flex items-center justify-center font-bold text-[10px]">KB</div>
+                                        <span class="font-bold text-xs tracking-wide">korabeauty.in</span>
+                                        <span class="text-[10px] text-stone-300">Sponsored</span>
+                                    </div>
+                                    <span class="text-white/80">•••</span>
+                                </div>
+                            </div>
+
+                            <!-- Story Call to Action -->
+                            <div class="relative z-10 text-center space-y-3">
+                                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-3 text-white text-left space-y-1">
+                                    <span class="text-[10px] font-bold uppercase tracking-wider text-gold-400">Pure Botanical Reset</span>
+                                    <p class="text-xs font-serif font-bold">Deep Cleanses. Controls Oil. Soothes Skin.</p>
+                                </div>
+                                <a href="https://korabeauty.in/products/purifying-gel-cleanser" target="_blank" class="w-full py-2.5 rounded-full bg-white text-stone-900 font-bold text-xs flex items-center justify-center gap-1.5 shadow-lg">
+                                    <span>Swipe Up to Shop</span>
+                                    <span>↑</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="text-xs text-stone-500 mt-4">Simulated 9:16 Meta / TikTok Paid Placement</span>
+                </div>
+
+                <!-- 3. Campaign Banner Mockup (Hidden by default) -->
+                <div id="sim-banner" class="hidden w-full max-w-4xl space-y-4">
+                    <div class="relative rounded-2xl overflow-hidden aspect-[21/9] bg-stone-950 shadow-lg border border-stone-200 dark:border-stone-800 flex items-center">
+                        <img src="assets/KORA Beauty Botanical Cleanser Spa Scene.png" alt="Editorial Brand Banner" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-r from-stone-950/85 via-stone-950/40 to-transparent"></div>
+
+                        <div class="relative z-10 p-6 sm:p-12 max-w-md text-white space-y-3">
+                            <span class="text-xs uppercase font-bold tracking-widest text-gold-400">Spring Campaign 2026</span>
+                            <h3 class="text-2xl sm:text-4xl font-serif font-bold leading-tight">
+                                Wake Up To <span class="italic font-display font-normal text-botanical-300">Quiet Purity</span>
+                            </h3>
+                            <p class="text-xs sm:text-sm text-stone-200 font-light leading-relaxed">
+                                Travertine stone, fresh mineral water, and organic neem leaves create an oasis of morning clarity.
+                            </p>
+                            <button class="px-5 py-2.5 rounded-full bg-white text-stone-900 text-xs font-semibold uppercase tracking-wider hover:bg-stone-100 transition-all shadow-md">
+                                Explore Campaign
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-stone-500 px-2">
+                        <span>Desktop Hero & High-Impact Digital Billboard (21:9 Aspect Ratio)</span>
+                        <span class="text-botanical-700 dark:text-botanical-300 font-medium">Creative Design: Satyam Manik</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. THE CAMPAIGN ASSET SYSTEM (GALLERY & INTERACTIVE FILTER) -->
+        <section id="gallery" class="space-y-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-3">
+                        <span class="w-7 h-[1px] bg-botanical-500"></span>
+                        <span class="text-xs font-bold uppercase tracking-widest text-botanical-700 dark:text-botanical-300">04. The Creative Execution</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-stone-900 dark:text-stone-100">
+                        7-Asset Campaign System
+                    </h2>
+                    <p class="text-sm text-stone-600 dark:text-stone-300 font-light">
+                        Click any card to open the High-Res Interactive Inspector with full art direction rationales.
+                    </p>
+                </div>
+                
+                <!-- Interactive Filter Tabs -->
+                <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                    <button onclick="filterGallery('all', this)" class="filter-tab active px-3.5 py-1.5 rounded-full border border-stone-300 dark:border-stone-700 transition-all">All (7)</button>
+                    <button onclick="filterGallery('pdp', this)" class="filter-tab px-3.5 py-1.5 rounded-full border border-stone-300 dark:border-stone-700 hover:border-botanical-600 transition-all">PDP & Ecom</button>
+                    <button onclick="filterGallery('macro', this)" class="filter-tab px-3.5 py-1.5 rounded-full border border-stone-300 dark:border-stone-700 hover:border-botanical-600 transition-all">Macro Texture</button>
+                    <button onclick="filterGallery('lifestyle', this)" class="filter-tab px-3.5 py-1.5 rounded-full border border-stone-300 dark:border-stone-700 hover:border-botanical-600 transition-all">Lifestyle & Ritual</button>
+                </div>
+            </div>
+
+            <!-- Asset Grid (7 items total) -->
+            <div id="galleryGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Asset 1: Macro Gel Texture -->
+                <div class="gallery-item macro group rounded-3xl overflow-hidden glass-panel border border-stone-200 dark:border-stone-800 hover:shadow-luxe-hover transition-all duration-300 flex flex-col justify-between cursor-pointer" onclick="openModalIndex(0)">
+                    <div class="relative overflow-hidden aspect-[4/5] bg-stone-100 dark:bg-stone-900">
+                        <img src="assets/Botanical Gel Cleanser on Sunlit Stone.png" alt="Botanical Gel Cleanser Macro Texture" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full bg-stone-900/80 backdrop-blur-md text-white text-[11px] font-semibold uppercase tracking-wider">Macro Texture</span>
+                        </div>
+                        <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity bg-stone-950/70 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-md flex items-center gap-1.5">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            <span>Inspect</span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100 group-hover:text-botanical-700 dark:group-hover:text-botanical-300 transition-colors">
+                            Gel Texture on Sunlit Stone
+                        </h3>
+                        <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed font-light">
+                            Sensory material study highlighting micro air bubbles and translucent purity on porous stone.
+                        </p>
+                        <div class="pt-3 border-t border-stone-200/80 dark:border-stone-800/80 flex items-center justify-between text-[11px] text-botanical-700 dark:text-botanical-300 font-semibold">
+                            <span>Placement: Product Page & Social</span>
+                            <span class="underline">Inspect High-Res →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Asset 2: Ingredient Story -->
+                <div class="gallery-item pdp group rounded-3xl overflow-hidden glass-panel border border-stone-200 dark:border-stone-800 hover:shadow-luxe-hover transition-all duration-300 flex flex-col justify-between cursor-pointer" onclick="openModalIndex(1)">
+                    <div class="relative overflow-hidden aspect-[4/5] bg-stone-100 dark:bg-stone-900">
+                        <img src="assets/Neem & Green Tea Purifying Cleanser.png" alt="Neem & Green Tea Purifying Cleanser Ingredient Story" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full bg-botanical-900/80 backdrop-blur-md text-white text-[11px] font-semibold uppercase tracking-wider">Ingredient Story</span>
+                        </div>
+                        <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity bg-stone-950/70 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-md flex items-center gap-1.5">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            <span>Inspect</span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100 group-hover:text-botanical-700 dark:group-hover:text-botanical-300 transition-colors">
+                            Botanical Ingredients Story
+                        </h3>
+                        <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed font-light">
+                            Deepening consumer trust by pairing the tube with genuine botanical cues—neem leaves and dried green tea.
+                        </p>
+                        <div class="pt-3 border-t border-stone-200/80 dark:border-stone-800/80 flex items-center justify-between text-[11px] text-botanical-700 dark:text-botanical-300 font-semibold">
+                            <span>Placement: Editorial Feature / PDP</span>
+                            <span class="underline">Inspect High-Res →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Asset 3: Spa Environment Atmosphere -->
+                <div class="gallery-item lifestyle group rounded-3xl overflow-hidden glass-panel border border-stone-200 dark:border-stone-800 hover:shadow-luxe-hover transition-all duration-300 flex flex-col justify-between cursor-pointer" onclick="openModalIndex(2)">
+                    <div class="relative overflow-hidden aspect-[4/5] bg-stone-100 dark:bg-stone-900">
+                        <img src="assets/KORA Beauty Botanical Cleanser Spa Scene.png" alt="KORA Botanical Cleanser Spa Scene" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full bg-stone-900/80 backdrop-blur-md text-white text-[11px] font-semibold uppercase tracking-wider">Atmosphere</span>
+                        </div>
+                        <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity bg-stone-950/70 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-md flex items-center gap-1.5">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            <span>Inspect</span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100 group-hover:text-botanical-700 dark:group-hover:text-botanical-300 transition-colors">
+                            Water Sanctuary Scene
+                        </h3>
+                        <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed font-light">
+                            Establishing high-end tranquility through flowing mineral water, textured stone plinths, and morning light.
+                        </p>
+                        <div class="pt-3 border-t border-stone-200/80 dark:border-stone-800/80 flex items-center justify-between text-[11px] text-botanical-700 dark:text-botanical-300 font-semibold">
+                            <span>Placement: Campaign Hero & Banner</span>
+                            <span class="underline">Inspect High-Res →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Asset 4: Lifestyle Human Ritual -->
+                <div class="gallery-item lifestyle group rounded-3xl overflow-hidden glass-panel border border-stone-200 dark:border-stone-800 hover:shadow-luxe-hover transition-all duration-300 flex flex-col justify-between cursor-pointer" onclick="openModalIndex(3)">
+                    <div class="relative overflow-hidden aspect-[4/5] bg-stone-100 dark:bg-stone-900">
+                        <img src="assets/Refreshing Neem & Green Tea Skincare Moment.png" alt="Refreshing Skincare Routine Moment" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full bg-botanical-900/80 backdrop-blur-md text-white text-[11px] font-semibold uppercase tracking-wider">Human Ritual</span>
+                        </div>
+                        <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity bg-stone-950/70 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-md flex items-center gap-1.5">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            <span>Inspect</span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100 group-hover:text-botanical-700 dark:group-hover:text-botanical-300 transition-colors">
+                            Cleansing Ritual Lifestyle
+                        </h3>
+                        <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed font-light">
+                            Authentic human ritual featuring believable foam, wet skin texture, and accurate product scale beside a stone basin.
+                        </p>
+                        <div class="pt-3 border-t border-stone-200/80 dark:border-stone-800/80 flex items-center justify-between text-[11px] text-botanical-700 dark:text-botanical-300 font-semibold">
+                            <span>Placement: Social Media & Brand Story</span>
+                            <span class="underline">Inspect High-Res →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Asset 5: Cleansing Ritual Guide (Step-by-Step) -->
+                <div class="gallery-item pdp group rounded-3xl overflow-hidden glass-panel border border-stone-200 dark:border-stone-800 hover:shadow-luxe-hover transition-all duration-300 flex flex-col justify-between cursor-pointer" onclick="openModalIndex(4)">
+                    <div class="relative overflow-hidden aspect-[4/5] bg-stone-100 dark:bg-stone-900">
+                        <img src="assets/KORA Beauty Cleansing Ritual Guide.png" alt="KORA Beauty Cleansing Ritual Guide" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full bg-stone-900/80 backdrop-blur-md text-white text-[11px] font-semibold uppercase tracking-wider">How to Use</span>
+                        </div>
+                        <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity bg-stone-950/70 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-md flex items-center gap-1.5">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            <span>Inspect</span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100 group-hover:text-botanical-700 dark:group-hover:text-botanical-300 transition-colors">
+                            3-Step Cleansing Ritual Guide
+                        </h3>
+                        <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed font-light">
+                            Structured 3-step usage breakdown: 1. Apply, 2. Massage, 3. Rinse. Elevating educational e-commerce graphic standards.
+                        </p>
+                        <div class="pt-3 border-t border-stone-200/80 dark:border-stone-800/80 flex items-center justify-between text-[11px] text-botanical-700 dark:text-botanical-300 font-semibold">
+                            <span>Placement: Product Page Carousel</span>
+                            <span class="underline">Inspect High-Res →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Asset 6: Performance Ecom Ad -->
+                <div class="gallery-item pdp group rounded-3xl overflow-hidden glass-panel border border-stone-200 dark:border-stone-800 hover:shadow-luxe-hover transition-all duration-300 flex flex-col justify-between cursor-pointer" onclick="openModalIndex(5)">
+                    <div class="relative overflow-hidden aspect-[4/5] bg-stone-100 dark:bg-stone-900">
+                        <img src="assets/KORA Purifying Gel Cleanser Ad.png" alt="KORA Purifying Gel Cleanser Ad" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full bg-gold-500/90 backdrop-blur-md text-white text-[11px] font-semibold uppercase tracking-wider">Performance Ad</span>
+                        </div>
+                        <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity bg-stone-950/70 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-md flex items-center gap-1.5">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            <span>Inspect</span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100 group-hover:text-botanical-700 dark:group-hover:text-botanical-300 transition-colors">
+                            Commercial Value Ad Concept
+                        </h3>
+                        <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed font-light">
+                            High-clarity e-commerce layout featuring key icon badges: Deep Cleanse, Controls Oil, Soothes Skin.
+                        </p>
+                        <div class="pt-3 border-t border-stone-200/80 dark:border-stone-800/80 flex items-center justify-between text-[11px] text-botanical-700 dark:text-botanical-300 font-semibold">
+                            <span>Placement: Paid Social / Top-of-Funnel</span>
+                            <span class="underline">Inspect High-Res →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Asset 7: Hero Visual Asset (Complete Set Inclusion) -->
+                <div class="gallery-item pdp group rounded-3xl overflow-hidden glass-panel border border-stone-200 dark:border-stone-800 hover:shadow-luxe-hover transition-all duration-300 flex flex-col justify-between cursor-pointer" onclick="openModalIndex(6)">
+                    <div class="relative overflow-hidden aspect-[4/5] bg-stone-100 dark:bg-stone-900">
+                        <img src="assets/Purifying Gel Cleanser Beauty Advertisement.png" alt="Purifying Gel Cleanser Beauty Advertisement" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full bg-botanical-700/85 backdrop-blur-md text-white text-[11px] font-semibold uppercase tracking-wider">Listing Hero</span>
+                        </div>
+                        <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity bg-stone-950/70 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-md flex items-center gap-1.5">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            <span>Inspect</span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100 group-hover:text-botanical-700 dark:group-hover:text-botanical-300 transition-colors">
+                            Complete Listing Feature Hero
+                        </h3>
+                        <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed font-light">
+                            Structured e-commerce hero with 3 circular callout insets highlighting gel texture, oil balance, and soothing benefits.
+                        </p>
+                        <div class="pt-3 border-t border-stone-200/80 dark:border-stone-800/80 flex items-center justify-between text-[11px] text-botanical-700 dark:text-botanical-300 font-semibold">
+                            <span>Placement: Amazon & Shopify PDP Hero</span>
+                            <span class="underline">Inspect High-Res →</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 6. GENERATION BLUEPRINT & PROMPT ARCHITECTURE (NEW METHODOLOGY FEATURE) -->
+        <section id="prompts" class="space-y-10">
+            <div class="flex items-center gap-3">
+                <span class="w-7 h-[1px] bg-botanical-500"></span>
+                <span class="text-xs font-bold uppercase tracking-widest text-botanical-700 dark:text-botanical-300">05. Production Architecture</span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-5 space-y-4">
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-stone-900 dark:text-stone-100">
+                        Prompt Engineering & Generation Controls
+                    </h2>
+                    <p class="text-sm text-stone-700 dark:text-stone-300 font-light leading-relaxed">
+                        Rather than vague aesthetic adjectives ("hyperrealistic, 8k, luxury"), commercial creative direction defines explicit physical lighting coordinates, optical lens lengths, material surface physics, and strict negative constraints.
+                    </p>
+
+                    <!-- Scorecard Pill Summary -->
+                    <div class="p-5 rounded-2xl bg-stone-100 dark:bg-[#181C19] border border-stone-200 dark:border-stone-800 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold uppercase tracking-wider text-botanical-800 dark:text-botanical-200">Creative Scorecard</span>
+                            <span class="text-xs font-bold text-emerald-600 bg-emerald-100 dark:bg-emerald-950/60 dark:text-emerald-300 px-2 py-0.5 rounded-full">9.8 / 10 Pass</span>
+                        </div>
+                        <div class="space-y-2 text-xs">
+                            <div class="flex justify-between">
+                                <span class="text-stone-600 dark:text-stone-400">Pack Geometry & Hue</span>
+                                <span class="font-bold">10 / 10</span>
+                            </div>
+                            <div class="w-full bg-stone-200 dark:bg-stone-800 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-botanical-600 h-full w-full"></div>
+                            </div>
+
+                            <div class="flex justify-between pt-1">
+                                <span class="text-stone-600 dark:text-stone-400">Claim Fidelity (Zero Hallucinations)</span>
+                                <span class="font-bold">10 / 10</span>
+                            </div>
+                            <div class="w-full bg-stone-200 dark:bg-stone-800 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-botanical-600 h-full w-full"></div>
+                            </div>
+
+                            <div class="flex justify-between pt-1">
+                                <span class="text-stone-600 dark:text-stone-400">Lighting & Texture Naturalism</span>
+                                <span class="font-bold">9.5 / 10</span>
+                            </div>
+                            <div class="w-full bg-stone-200 dark:bg-stone-800 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-botanical-600 h-full w-[95%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Code / Prompt Tabs -->
+                <div class="lg:col-span-7 glass-panel rounded-3xl p-6 sm:p-8 border border-stone-200 dark:border-stone-800 space-y-5">
+                    <div class="flex items-center justify-between border-b border-stone-200 dark:border-stone-800 pb-3">
+                        <div class="flex items-center gap-2">
+                            <button onclick="switchPromptTab('hero-prompt', this)" class="prompt-tab px-3 py-1 rounded-full bg-botanical-900 text-white dark:bg-stone-100 dark:text-stone-900 text-xs font-semibold">Hero Scene Spec</button>
+                            <button onclick="switchPromptTab('macro-prompt', this)" class="prompt-tab px-3 py-1 rounded-full text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 text-xs font-semibold">Macro Texture Spec</button>
+                            <button onclick="switchPromptTab('neg-prompt', this)" class="prompt-tab px-3 py-1 rounded-full text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 text-xs font-semibold">Negative Guardrails</button>
+                        </div>
+                        <span class="text-[11px] font-mono text-stone-500">v2.4 Production</span>
+                    </div>
+
+                    <!-- Prompt Tab 1 -->
+                    <div id="hero-prompt" class="space-y-3 font-mono text-xs text-stone-700 dark:text-stone-300 bg-stone-50 dark:bg-stone-950 p-4 rounded-2xl border border-stone-200 dark:border-stone-800 leading-relaxed overflow-x-auto">
+                        <p class="text-stone-500">// Commercial Hero Prompt Blueprint</p>
+                        <p><strong>Environment:</strong> Unpolished travertine limestone plinth in warm 7:30 AM Mediterranean sunlight, gentle raking shadows at 25-degree elevation.</p>
+                        <p><strong>Subject:</strong> KORA Beauty Purifying Gel Cleanser in exact pale sage-green (#C2CBB9) tube, matte finish, white flip-top cap, upright composition.</p>
+                        <p><strong>Botanical Props:</strong> Three crisp fresh green neem leaves, dried rolled green tea leaves, fine micro water beads on stone edge.</p>
+                        <p><strong>Optics:</strong> Hasselblad 90mm macro lens, f/4 aperture for gentle background falloff, zero plastic studio strobe glare.</p>
+                    </div>
+
+                    <!-- Prompt Tab 2 (Hidden) -->
+                    <div id="macro-prompt" class="hidden space-y-3 font-mono text-xs text-stone-700 dark:text-stone-300 bg-stone-50 dark:bg-stone-950 p-4 rounded-2xl border border-stone-200 dark:border-stone-800 leading-relaxed overflow-x-auto">
+                        <p class="text-stone-500">// Sensory Gel Macro Prompt Blueprint</p>
+                        <p><strong>Subject:</strong> Microscopic cross-section of translucent skincare gel droplet resting on wet porous ivory stone.</p>
+                        <p><strong>Internal Optics:</strong> Visible suspended micro air bubbles, subtle botanical herbal green tint, natural refractive light caustics.</p>
+                        <p><strong>Depth of Field:</strong> Extreme macro 100mm f/2.8, razor-thin focal plane on crown of droplet, zero chromatic aberration.</p>
+                    </div>
+
+                    <!-- Prompt Tab 3 (Hidden) -->
+                    <div id="neg-prompt" class="hidden space-y-3 font-mono text-xs text-stone-700 dark:text-stone-300 bg-stone-50 dark:bg-stone-950 p-4 rounded-2xl border border-stone-200 dark:border-stone-800 leading-relaxed overflow-x-auto">
+                        <p class="text-rose-500">// Negative Tokens & Boundary Constraints</p>
+                        <p><strong>Strict Negatives:</strong> distorted packaging typography, hallucinated foreign language text, floating impossible leaves, high-gloss plastic sheen, oily specular blowout, fake clinical cross icons, deformed anatomical hands, muddy color cast, artificial oversaturation.</p>
+                        <p><strong>Enforcement:</strong> Verified through multi-pass inpainting and vector typography overlay where required.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. HUMAN-IN-THE-LOOP QUALITY CONTROL & VERIFICATION -->
+        <section id="quality-control" class="space-y-12">
+            <div class="flex items-center gap-3">
+                <span class="w-7 h-[1px] bg-botanical-500"></span>
+                <span class="text-xs font-bold uppercase tracking-widest text-botanical-700 dark:text-botanical-300">06. The Discipline</span>
+            </div>
+
+            <div class="space-y-4 max-w-2xl">
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-stone-900 dark:text-stone-100">
+                    Product Truth & Claim Verification
+                </h2>
+                <p class="text-sm sm:text-base text-stone-700 dark:text-stone-300 leading-relaxed font-light">
+                    Anyone can generate generic glossy beauty imagery with modern generative models. What separates junior prompting from senior creative direction is <strong>rigorous claim verification and physical packaging fidelity</strong>.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Check 1 -->
+                <div class="p-6 rounded-2xl glass-panel space-y-4 border border-stone-200 dark:border-stone-800">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold uppercase tracking-wider text-botanical-800 dark:text-botanical-200">1. Packaging Integrity</span>
+                        <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 flex items-center justify-center text-xs font-bold">✓</span>
+                    </div>
+                    <ul class="text-xs text-stone-600 dark:text-stone-300 space-y-2 leading-relaxed font-light">
+                        <li class="flex items-start gap-2">
+                            <span class="text-botanical-600 font-bold">•</span>
+                            <span><strong>Pack Hue:</strong> Pale sage-green tube with matte off-white flip-top cap strictly maintained.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-botanical-600 font-bold">•</span>
+                            <span><strong>Branding:</strong> Gold botanical leaf crest and dark-green typography aligned with official packaging.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-botanical-600 font-bold">•</span>
+                            <span><strong>Volume:</strong> Stated net quantity 100 ml / 3.38 fl. oz. preserved.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Check 2 -->
+                <div class="p-6 rounded-2xl glass-panel space-y-4 border border-stone-200 dark:border-stone-800">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold uppercase tracking-wider text-botanical-800 dark:text-botanical-200">2. Zero False Claims</span>
+                        <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 flex items-center justify-center text-xs font-bold">✓</span>
+                    </div>
+                    <ul class="text-xs text-stone-600 dark:text-stone-300 space-y-2 leading-relaxed font-light">
+                        <li class="flex items-start gap-2">
+                            <span class="text-botanical-600 font-bold">•</span>
+                            <span><strong>No Medical Claims:</strong> No unsubstantiated acne cures or instant wrinkle reversal claims.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-botanical-600 font-bold">•</span>
+                            <span><strong>True Statements:</strong> Only cited "Dermatologically Tested", "Sulphate Free", "Paraben Free" from pack.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-botanical-600 font-bold">•</span>
+                            <span><strong>Ingredient Truth:</strong> Restricted botanical storytelling strictly to Neem and Green Tea.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Check 3 -->
+                <div class="p-6 rounded-2xl glass-panel space-y-4 border border-stone-200 dark:border-stone-800">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold uppercase tracking-wider text-botanical-800 dark:text-botanical-200">3. Commercial Viability</span>
+                        <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 flex items-center justify-center text-xs font-bold">✓</span>
+                    </div>
+                    <ul class="text-xs text-stone-600 dark:text-stone-300 space-y-2 leading-relaxed font-light">
+                        <li class="flex items-start gap-2">
+                            <span class="text-botanical-600 font-bold">•</span>
+                            <span><strong>Mobile Legibility:</strong> Benefit labels structured for rapid comprehension on small viewports.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-botanical-600 font-bold">•</span>
+                            <span><strong>Negative Space:</strong> Compositions leave intentional breathing room for e-commerce headlines.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-botanical-600 font-bold">•</span>
+                            <span><strong>Multi-Channel:</strong> Assets ready for PDP carousels, paid social ads, and hero banners.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. ABOUT THE CREATIVE DIRECTOR (SATYAM MANIK) -->
+        <section id="creator" class="rounded-3xl p-8 sm:p-12 bg-botanical-900 text-white shadow-2xl relative overflow-hidden">
+            <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-botanical-800/40 blur-3xl pointer-events-none"></div>
+
+            <div class="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-4 flex flex-col items-center sm:items-start text-center sm:text-left gap-4">
+                    <img src="assets/profile.jpg" alt="Satyam Manik" class="w-24 h-24 rounded-full object-cover border-2 border-gold-400 shadow-md">
+                    <div>
+                        <h3 class="text-2xl font-serif font-bold text-white">Satyam Manik</h3>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-gold-400">AI Ecommerce Creative Designer</span>
+                    </div>
+                </div>
+
+                <div class="md:col-span-8 space-y-5">
+                    <p class="text-sm sm:text-base text-stone-200 font-light leading-relaxed">
+                        I specialize in bridging <strong>e-commerce visual strategy, creative art direction, and AI image synthesis</strong> with human-led quality control. I build structured campaign systems that elevate brand perception while maintaining absolute product fidelity.
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="https://wa.me/919343961879" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-semibold tracking-wide transition-all shadow-md flex items-center gap-2 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 20.16C10.57 20.16 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.16 12.05 20.16ZM16.57 14.33C16.32 14.21 15.1 13.61 14.88 13.53C14.65 13.45 14.48 13.41 14.32 13.65C14.15 13.9 13.68 14.45 13.53 14.62C13.39 14.78 13.24 14.8 12.99 14.68C12.74 14.55 11.94 14.29 10.99 13.44C10.25 12.78 9.75 11.97 9.61 11.72C9.46 11.47 9.59 11.34 9.72 11.21C9.83 11.1 9.97 10.92 10.09 10.78C10.21 10.64 10.26 10.53 10.34 10.37C10.42 10.2 10.38 10.06 10.32 9.94C10.26 9.81 9.77 8.61 9.56 8.12C9.37 7.64 9.17 7.7 9.02 7.69C8.88 7.69 8.71 7.68 8.55 7.68C8.38 7.68 8.11 7.74 7.89 7.99C7.66 8.24 7.02 8.84 7.02 10.06C7.02 11.28 7.91 12.46 8.03 12.62C8.15 12.79 9.77 15.28 12.26 16.35C12.85 16.61 13.31 16.76 13.67 16.87C14.26 17.06 14.8 17.03 15.23 16.97C15.71 16.9 16.71 16.37 16.92 15.79C17.13 15.21 17.13 14.72 17.07 14.62C17.01 14.51 16.82 14.45 16.57 14.33Z"/></svg>
+                            <span>WhatsApp</span>
+                        </a>
+
+                        <button onclick="copyContactEmail()" id="copyEmailBtn" class="px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-stone-200 border border-white/20 text-xs font-semibold tracking-wide transition-all flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <span id="copyEmailText">Copy Contact Email</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-20 border-t border-stone-200 dark:border-stone-800 py-8 px-5 sm:px-8 text-center text-xs text-stone-500 dark:text-stone-400 space-y-2">
+        <p>© 2026 Satyam Manik — Independent AI Ecommerce Creative Design Portfolio.</p>
+        <p class="text-[11px] text-stone-400 dark:text-stone-500">This concept is not commissioned, endorsed, or affiliated with KORA Beauty. Created for creative portfolio demonstration.</p>
+    </footer>
+
+    <!-- INTERACTIVE HIGH-RES ASSET INSPECTOR LIGHTBOX MODAL WITH CAROUSEL CONTROLS -->
+    <div id="assetModal" class="fixed inset-0 z-50 bg-stone-950/90 backdrop-blur-xl hidden items-center justify-center p-4 sm:p-8" onclick="closeModalOnBackdrop(event)">
+        <div class="relative max-w-5xl w-full bg-stone-50 dark:bg-stone-900 rounded-3xl overflow-hidden shadow-2xl border border-stone-200 dark:border-stone-800 flex flex-col md:flex-row max-h-[92vh]">
+            
+            <!-- Top Controls (Close & Counter) -->
+            <div class="absolute top-4 right-4 z-20 flex items-center gap-2">
+                <span id="modalCounter" class="text-[11px] font-mono text-stone-300 bg-stone-950/70 px-3 py-1 rounded-full backdrop-blur-md">1 / 7</span>
+                <button onclick="closeModal()" class="w-9 h-9 rounded-full bg-stone-950/70 text-white hover:bg-stone-900 flex items-center justify-center transition-all backdrop-blur-md" aria-label="Close Inspector">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+
+            <!-- Image Viewport with Previous & Next Arrows -->
+            <div class="relative md:w-3/5 bg-stone-100 dark:bg-stone-950 flex items-center justify-center p-4 overflow-hidden select-none">
+                <img id="modalImg" src="" alt="Asset Detail View" class="max-h-[55vh] md:max-h-[78vh] w-auto object-contain rounded-xl shadow-lg transition-all duration-300">
+
+                <!-- Previous Arrow -->
+                <button onclick="prevAsset()" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-stone-950/60 hover:bg-stone-950 text-white flex items-center justify-center backdrop-blur-md transition-all border border-white/10" aria-label="Previous Asset">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <!-- Next Arrow -->
+                <button onclick="nextAsset()" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-stone-950/60 hover:bg-stone-950 text-white flex items-center justify-center backdrop-blur-md transition-all border border-white/10" aria-label="Next Asset">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+
+            <!-- Details Sidebar -->
+            <div class="md:w-2/5 p-6 sm:p-8 space-y-4 overflow-y-auto flex flex-col justify-between">
+                <div class="space-y-3">
+                    <span id="modalTag" class="text-[11px] uppercase tracking-wider font-bold text-botanical-700 dark:text-botanical-300 bg-botanical-100 dark:bg-botanical-900/60 px-3 py-1 rounded-full inline-block">Asset Tag</span>
+                    <h3 id="modalTitle" class="text-2xl font-serif font-bold text-stone-900 dark:text-stone-100">Asset Title</h3>
+                    <p id="modalDesc" class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 font-light leading-relaxed">Asset Description</p>
+                </div>
+
+                <div class="pt-4 border-t border-stone-200 dark:border-stone-800 text-xs space-y-3">
+                    <div>
+                        <span class="font-bold text-stone-900 dark:text-stone-100 uppercase tracking-wider text-[10px] block">Commercial Placement</span>
+                        <span id="modalPlacement" class="text-botanical-700 dark:text-botanical-300 font-medium">PDP Hero & Paid Social</span>
+                    </div>
+                    <div>
+                        <span class="font-bold text-stone-900 dark:text-stone-100 uppercase tracking-wider text-[10px] block">Quality Control Check</span>
+                        <p class="text-stone-600 dark:text-stone-300 leading-snug">Original packaging geometry, botanical proportions, and typography validated against official pack references.</p>
+                    </div>
+                    <div class="flex items-center gap-2 text-[11px] text-stone-400">
+                        <span>Use <kbd class="px-1.5 py-0.5 rounded bg-stone-200 dark:bg-stone-800 text-stone-700 dark:text-stone-300 font-mono">←</kbd> <kbd class="px-1.5 py-0.5 rounded bg-stone-200 dark:bg-stone-800 text-stone-700 dark:text-stone-300 font-mono">→</kbd> keys to navigate</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-stone-900 text-white px-5 py-3 rounded-full text-xs font-medium shadow-2xl flex items-center gap-2 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span id="toastMsg">Email copied to clipboard</span>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // 7 CAMPAIGN ASSET METADATA REPOSITORY
+        const campaignAssets = [
+            {
+                src: 'assets/Botanical Gel Cleanser on Sunlit Stone.png',
+                tag: 'Macro Texture Study',
+                title: 'Sensory Materiality & Bubble Detail',
+                desc: 'Sensory macro material study highlighting translucent purity, suspended micro air bubbles, and wet stone reflections.',
+                placement: 'Product Page Carousel & High-Conversion Organic Social'
+            },
+            {
+                src: 'assets/Neem & Green Tea Purifying Cleanser.png',
+                tag: 'Ingredient Storytelling',
+                title: 'Botanical Roots: Neem & Green Tea',
+                desc: 'Visualizing the core active ingredients—fresh neem leaves and dried green tea pearls—around the cleanser with clean editorial typography.',
+                placement: 'PDP Ingredient Authority Feature & Detail Story'
+            },
+            {
+                src: 'assets/KORA Beauty Botanical Cleanser Spa Scene.png',
+                tag: 'Spa Atmosphere',
+                title: 'Mineral Water & Stone Sanctuary',
+                desc: 'Presenting the cleanser in an architectural spa environment with dynamic water ripples, travertine plinths, and lush botanical shadows.',
+                placement: 'Campaign Hero Banner & Homepage Slider'
+            },
+            {
+                src: 'assets/Refreshing Neem & Green Tea Skincare Moment.png',
+                tag: 'Lifestyle & Routine',
+                title: 'Authentic Daily Cleansing Ritual',
+                desc: 'Realistic skin texture, genuine morning sunlight, and authentic facial massage moments anchoring the cleanser in everyday human life.',
+                placement: 'Social Media Ad (9:16 & 4:5) & Influencer Style Creative'
+            },
+            {
+                src: 'assets/KORA Beauty Cleansing Ritual Guide.png',
+                tag: 'Educational PDP Guide',
+                title: 'Three-Step Usage Sequence',
+                desc: 'Clean educational guide breaking down Apply, Massage, and Rinse to reduce customer friction and increase retention.',
+                placement: 'Shopify / Amazon PDP Image 4 (How To Use)'
+            },
+            {
+                src: 'assets/KORA Purifying Gel Cleanser Ad.png',
+                tag: 'Performance Creative',
+                title: 'Commercial Value Ad Concept',
+                desc: 'High-conversion paid social and PDP asset with structured callout badges for deep cleansing, oil control, and skin soothing.',
+                placement: 'Meta / Instagram Paid Acquisition Ad'
+            },
+            {
+                src: 'assets/Purifying Gel Cleanser Beauty Advertisement.png',
+                tag: 'Complete Listing Hero',
+                title: 'Botanical Precision & Stated Benefits',
+                desc: 'Comprehensive e-commerce listing hero showing circular macro texture and leaf callouts alongside the full bottle.',
+                placement: 'Top-of-Funnel PDP Hero & Amazon Brand Store'
+            }
+        ];
+
+        let currentModalIndex = 0;
+
+        // Interactive Category Filter
+        function filterGallery(category, button) {
+            document.querySelectorAll('.filter-tab').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const items = document.querySelectorAll('.gallery-item');
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal / Lightbox Controller
+        const modal = document.getElementById('assetModal');
+        const modalImg = document.getElementById('modalImg');
+        const modalTag = document.getElementById('modalTag');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDesc = document.getElementById('modalDesc');
+        const modalPlacement = document.getElementById('modalPlacement');
+        const modalCounter = document.getElementById('modalCounter');
+
+        function openModalIndex(index) {
+            currentModalIndex = index;
+            updateModalView();
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function updateModalView() {
+            const item = campaignAssets[currentModalIndex];
+            modalImg.src = item.src;
+            modalTag.innerText = item.tag;
+            modalTitle.innerText = item.title;
+            modalDesc.innerText = item.desc;
+            if (modalPlacement) modalPlacement.innerText = item.placement;
+            if (modalCounter) modalCounter.innerText = `${currentModalIndex + 1} / ${campaignAssets.length}`;
+        }
+
+        function nextAsset() {
+            currentModalIndex = (currentModalIndex + 1) % campaignAssets.length;
+            updateModalView();
+        }
+
+        function prevAsset() {
+            currentModalIndex = (currentModalIndex - 1 + campaignAssets.length) % campaignAssets.length;
+            updateModalView();
+        }
+
+        function openModal(imgSrc, tag, title, desc) {
+            const foundIndex = campaignAssets.findIndex(a => a.src === imgSrc);
+            if (foundIndex !== -1) {
+                openModalIndex(foundIndex);
+            } else {
+                modalImg.src = imgSrc;
+                modalTag.innerText = tag;
+                modalTitle.innerText = title;
+                modalDesc.innerText = desc;
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        function closeModalOnBackdrop(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Keyboard controls
+        window.addEventListener('keydown', (e) => {
+            if (!modal.classList.contains('hidden')) {
+                if (e.key === 'Escape') closeModal();
+                if (e.key === 'ArrowRight') nextAsset();
+                if (e.key === 'ArrowLeft') prevAsset();
+            }
+        });
+
+        // Interactive Packaging Hotspot Click handler
+        const hotspotData = {
+            1: {
+                badge: 'Pin 1: Brand & Foil Crest',
+                title: 'Gold Botanical Leaf Crest & Typography',
+                body: 'Official KORA wordmark and stylized botanical leaf emblem rendered with subtle gold foil specular response. Negative prompts prevent generative models from warping the letterforms into pseudo-letter glyphs.'
+            },
+            2: {
+                badge: 'Pin 2: Core Active Ingredients',
+                title: 'Neem & Green Tea Botanical Focus',
+                body: 'Accurate biological cues for Azadirachta indica (Neem) and Camellia sinensis (Green Tea). Visual assets only feature real formulation ingredients, rejecting random tropical fruit additions.'
+            },
+            3: {
+                badge: 'Pin 3: Stated Benefits & Skin Type',
+                title: 'Deep Cleanses, Controls Oil, Soothes Skin',
+                body: 'Exact stated claims directly taken from official retail packaging. Explicitly targeted for "Oily & Combination Skin" with zero fabricated dermatological certifications.'
+            },
+            4: {
+                badge: 'Pin 4: Pack Hue, Fill & Cap',
+                title: '100 ml ℮ 3.38 fl. oz. & Pale Sage Tube',
+                body: 'Tube color locked to Pantone Sage #C2CBB9 with matte soft-touch finish and clean off-white flip-top cap. Preserves realistic volume geometry without artificial elongation.'
+            }
+        };
+
+        function selectHotspot(id) {
+            const data = hotspotData[id];
+            if (!data) return;
+            document.getElementById('hotspotBadge').innerText = data.badge;
+            document.getElementById('hotspotTitle').innerText = data.title;
+            document.getElementById('hotspotBody').innerText = data.body;
+
+            // Highlight chosen pin
+            for (let i = 1; i <= 4; i++) {
+                const pin = document.getElementById('pin' + i);
+                if (pin) {
+                    if (i === id) {
+                        pin.classList.add('scale-125');
+                    } else {
+                        pin.classList.remove('scale-125');
+                    }
+                }
+            }
+        }
+
+        // Channel Simulator Switcher
+        function switchSimulator(channel, btn) {
+            document.querySelectorAll('.sim-tab').forEach(b => {
+                b.classList.remove('bg-white', 'dark:bg-stone-900', 'text-stone-900', 'dark:text-stone-100', 'shadow-sm');
+                b.classList.add('text-stone-600', 'dark:text-stone-400');
+            });
+            btn.classList.add('bg-white', 'dark:bg-stone-900', 'text-stone-900', 'dark:text-stone-100', 'shadow-sm');
+            btn.classList.remove('text-stone-600', 'dark:text-stone-400');
+
+            document.getElementById('sim-pdp').classList.add('hidden');
+            document.getElementById('sim-story').classList.add('hidden');
+            document.getElementById('sim-banner').classList.add('hidden');
+
+            if (channel === 'pdp') document.getElementById('sim-pdp').classList.remove('hidden');
+            if (channel === 'story') document.getElementById('sim-story').classList.remove('hidden');
+            if (channel === 'banner') document.getElementById('sim-banner').classList.remove('hidden');
+        }
+
+        let pdpImgCycle = 0;
+        const pdpImages = [
+            'assets/Purifying Gel Cleanser Beauty Advertisement.png',
+            'assets/Botanical Gel Cleanser on Sunlit Stone.png',
+            'assets/Neem & Green Tea Purifying Cleanser.png',
+            'assets/KORA Beauty Cleansing Ritual Guide.png'
+        ];
+        function cycleSimPdp() {
+            pdpImgCycle = (pdpImgCycle + 1) % pdpImages.length;
+            document.getElementById('simPdpImg').src = pdpImages[pdpImgCycle];
+        }
+
+        // Prompt Blueprint Tab Switcher
+        function switchPromptTab(tabId, btn) {
+            document.querySelectorAll('.prompt-tab').forEach(b => {
+                b.classList.remove('bg-botanical-900', 'text-white', 'dark:bg-stone-100', 'dark:text-stone-900');
+                b.classList.add('text-stone-600', 'dark:text-stone-400');
+            });
+            btn.classList.add('bg-botanical-900', 'text-white', 'dark:bg-stone-100', 'dark:text-stone-900');
+            btn.classList.remove('text-stone-600', 'dark:text-stone-400');
+
+            document.getElementById('hero-prompt').classList.add('hidden');
+            document.getElementById('macro-prompt').classList.add('hidden');
+            document.getElementById('neg-prompt').classList.add('hidden');
+
+            const target = document.getElementById(tabId);
+            if (target) target.classList.remove('hidden');
+        }
+
+        // Copy Email to Clipboard
+        function copyContactEmail() {
+            navigator.clipboard.writeText('satyammanik@gmail.com').then(() => {
+                showToast('Email (satyammanik@gmail.com) copied to clipboard');
+                const btnText = document.getElementById('copyEmailText');
+                if (btnText) {
+                    btnText.innerText = 'Copied to Clipboard!';
+                    setTimeout(() => {
+                        btnText.innerText = 'Copy Contact Email';
+                    }, 2500);
+                }
+            }).catch(() => {
+                showToast('Email: satyammanik@gmail.com');
+            });
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            if (toast && toastMsg) {
+                toastMsg.innerText = msg;
+                toast.classList.remove('translate-y-20', 'opacity-0');
+                setTimeout(() => {
+                    toast.classList.add('translate-y-20', 'opacity-0');
+                }, 3000);
+            }
+        }
+
+        // Theme Toggle Logic
+        function initTheme() {
+            const saved = localStorage.getItem('kora_theme');
+            if (saved === 'dark') {
+                setDarkMode(true);
+            } else {
+                setDarkMode(false);
+            }
+        }
+
+        function toggleTheme() {
+            const isDark = document.documentElement.classList.contains('dark');
+            setDarkMode(!isDark);
+        }
+
+        function setDarkMode(isDark) {
+            const sunIcon = document.getElementById('themeSunIcon');
+            const moonIcon = document.getElementById('themeMoonIcon');
+            if (isDark) {
+                document.documentElement.classList.add('dark');
+                document.body.classList.add('dark');
+                localStorage.setItem('kora_theme', 'dark');
+                if (sunIcon) sunIcon.classList.remove('hidden');
+                if (moonIcon) moonIcon.classList.add('hidden');
+            } else {
+                document.documentElement.classList.remove('dark');
+                document.body.classList.remove('dark');
+                localStorage.setItem('kora_theme', 'light');
+                if (sunIcon) sunIcon.classList.add('hidden');
+                if (moonIcon) moonIcon.classList.remove('hidden');
+            }
+        }
+
+        initTheme();
+    </script>
+</body>
+</html>
