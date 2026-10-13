@@ -18,4 +18,5 @@ An independent e-commerce visual strategy and creative direction case study for 
 
 ## Author
 **Satyam Manik** — AI Ecommerce Creative Designer
+- Behance: [behance.net/satyammanik](https://www.behance.net/satyammanik)
 - WhatsApp: [Chat on WhatsApp](https://wa.me/919343961879)
